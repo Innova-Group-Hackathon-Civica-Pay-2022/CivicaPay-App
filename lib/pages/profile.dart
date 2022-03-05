@@ -15,7 +15,7 @@ class _ProfileState extends State<Profile> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(
-          onPressed: await providerRequests.getHttp(),
+          onPressed: () => providerRequests.getHttp(),
           child: const Text("Push this boton"),
         ),
         TextTest(),
