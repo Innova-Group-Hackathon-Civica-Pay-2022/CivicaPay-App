@@ -4,14 +4,14 @@ import 'package:civicapay_2022/components/card_image_activities.dart';
 import 'package:civicapay_2022/providers/requests.dart';
 import 'package:flutter/material.dart';
 
-class SocialActivities extends StatefulWidget {
-  SocialActivities({Key? key}) : super(key: key);
+class ReedemPoints extends StatefulWidget {
+  ReedemPoints({Key? key}) : super(key: key);
 
   @override
-  State<SocialActivities> createState() => _SocialActivitiesState();
+  State<ReedemPoints> createState() => _ReedemPointsState();
 }
 
-class _SocialActivitiesState extends State<SocialActivities> {
+class _ReedemPointsState extends State<ReedemPoints> {
   final ProviderRequests _providerRequests = ProviderRequests();
   final double coverHeight = 280;
   final double profileHeight = 100;
@@ -26,7 +26,7 @@ class _SocialActivitiesState extends State<SocialActivities> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                "Actividades disponibles",
+                "Market Place",
                 style: TextStyle(
                   color: Colors.green,
                   fontSize: 30,

@@ -134,6 +134,14 @@ class _ProfileState extends State<Profile> {
             ),
           ),
         )),
+        ElevatedButton(
+          onPressed: () => _providerRequests.getActivities(),
+          child: Text("Stuff"),
+        ),
+        ElevatedButton(
+          onPressed: () => _providerRequests.getActivities(),
+          child: Text("Payment"),
+        )
       ],
     );
   }
