@@ -1,3 +1,4 @@
+import 'package:civicapay_2022/components/card_image.dart';
 import 'package:civicapay_2022/components/text_test.dart';
 import 'package:civicapay_2022/components/user_cover.dart';
 import 'package:civicapay_2022/components/user_image.dart';
@@ -16,11 +17,12 @@ class _ProfileState extends State<Profile> {
   final double profileHeight = 100;
   final double top = 80;
   String name = '';
+  int points = 69;
+  int certificates = 13;
 
   @override
   void initState() {
     super.initState();
-    //   final top = coverHeight - profileHeight;
     _providerRequests.getUserName().then((String result) {
       setState(() {
         name = result;
@@ -55,12 +57,54 @@ class _ProfileState extends State<Profile> {
                 ),
               ],
             ),
-            const Positioned(
-              bottom: 40,
+            Positioned(
+              bottom: 5,
               left: 20,
-              child: Icon(
-                FontAwesomeIcons.trophy,
-                color: Colors.amber,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      const Icon(
+                        FontAwesomeIcons.trophy,
+                        color: Colors.amber,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text(
+                          "${points.toString()} CivicaPuntos",
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 30.0),
+                    child: Column(
+                      children: [
+                        const Icon(
+                          FontAwesomeIcons.certificate,
+                          color: Colors.amber,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            "${certificates.toString()} Certificados",
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             )
           ],
@@ -68,19 +112,20 @@ class _ProfileState extends State<Profile> {
         Expanded(
             child: Container(
           width: double.infinity,
-          margin: const EdgeInsets.only(top: 15),
+          margin: const EdgeInsets.only(top: 20),
           decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(34))),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () => _providerRequests.getHttp(),
-                child: const Text("Push this boton"),
-              ),
-            ],
+              color: Color(0xF2F2F2F2F2F2),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(35))),
+          child: SizedBox(
+            height: 350.0,
+            child: ListView(
+              padding: const EdgeInsets.all(10.0),
+              scrollDirection: Axis.vertical,
+              children: <Widget>[
+                CardImage("images/social_activities.png"),
+                CardImage("images/reedem_points.png"),
+              ],
+            ),
           ),
         )),
       ],
