@@ -8,16 +8,29 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  final ProviderRequests providerRequests = ProviderRequests();
+  final ProviderRequests _providerRequests = ProviderRequests();
+  String name = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _providerRequests.getUserName().then((String result) {
+      setState(() {
+        name = result;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(
-          onPressed: () => providerRequests.getHttp(),
+          onPressed: () => _providerRequests.getHttp(),
           child: const Text("Push this boton"),
         ),
+        Text(name),
         TextTest(),
         TextTest(),
         TextTest(),
