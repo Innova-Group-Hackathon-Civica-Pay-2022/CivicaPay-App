@@ -7,19 +7,15 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String pathImage = "images/civica_logo.png";
+  String pathImage = "images/home.png";
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(30.0,),
-          child: Image(image: AssetImage(pathImage)),
-        ),
-        TextTest(),
-      ],
-    );
+    return Container(
+        decoration: BoxDecoration(
+      image: DecorationImage(
+        image: AssetImage(pathImage),
+        fit: BoxFit.cover,
+      ),
+    ));
   }
 }

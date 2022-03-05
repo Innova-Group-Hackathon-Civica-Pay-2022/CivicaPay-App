@@ -7,14 +7,15 @@ class QRPayment extends StatefulWidget {
 }
 
 class _QRPaymentState extends State<QRPayment> {
+  String pathImage = "images/qrcode.png";
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        TextTest(),
-        TextTest(),
-      ],
-    );
+    return Container(
+        decoration: BoxDecoration(
+      image: DecorationImage(
+        image: AssetImage(pathImage),
+        fit: BoxFit.cover,
+      ),
+    ));
   }
 }

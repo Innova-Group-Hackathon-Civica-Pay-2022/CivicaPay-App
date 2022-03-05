@@ -1,3 +1,4 @@
+import 'package:civicapay_2022/pages/social_activities.dart';
 import 'package:flutter/material.dart';
 
 class FloatingActionButtonGreen extends StatefulWidget {
@@ -22,8 +23,13 @@ class _FloatingActionButtonGreen extends State<FloatingActionButtonGreen> {
       backgroundColor: const Color(0xFF11DA53),
       mini: true,
       tooltip: "Fav",
-      onPressed: onPressedFav,
-      child: const Icon(Icons.favorite_border),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SocialActivities()),
+        );
+      },
+      child: const Icon(Icons.add),
     );
   }
 }
