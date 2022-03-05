@@ -60,14 +60,30 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         bottomNavigationBar: CurvedNavigationBar(
           animationDuration: const Duration(milliseconds: 350),
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.white,
           key: _bottomNavigationKey,
           index: _pageIndex,
           items: const <Widget>[
-            Icon(Icons.house_rounded, size: 30),
-            Icon(Icons.qr_code_2_rounded, size: 30),
-            Icon(Icons.explore_rounded, size: 30),
-            Icon(Icons.contacts_rounded, size: 30),
+            Icon(
+              Icons.house_rounded,
+              size: 30,
+              color: Colors.green,
+            ),
+            Icon(
+              Icons.qr_code_2_rounded,
+              size: 30,
+              color: Colors.green,
+            ),
+            Icon(
+              Icons.explore_rounded,
+              size: 30,
+              color: Colors.green,
+            ),
+            Icon(
+              Icons.contacts_rounded,
+              size: 30,
+              color: Colors.green,
+            ),
           ],
           onTap: (index) {
             setState(() {
