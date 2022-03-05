@@ -7,15 +7,16 @@ class Explore extends StatefulWidget {
 }
 
 class _ExploreState extends State<Explore> {
+
+  String pathImage = "images/explore.png";
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        TextTest(),
-        TextTest(),
-        TextTest(),
-      ],
-    );
+    return Container(
+        decoration: BoxDecoration(
+      image: DecorationImage(
+        image: AssetImage(pathImage),
+        fit: BoxFit.cover,
+      ),
+    ));
   }
 }

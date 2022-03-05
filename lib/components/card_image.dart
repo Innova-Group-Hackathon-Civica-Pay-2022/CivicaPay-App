@@ -4,7 +4,9 @@ import 'package:civicapay_2022/components/floating_action_button_green.dart';
 class CardImage extends StatelessWidget {
   String pathImage = "assets/images/beach.jpeg";
 
-  CardImage(this.pathImage, {Key? key}) : super(key: key);
+  String cardText = "Stuff";
+
+  CardImage(this.pathImage, this.cardText, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,23 @@ class CardImage extends StatelessWidget {
 
     return Stack(
       alignment: const Alignment(0.9, 1.1),
-      children: <Widget>[card, const FloatingActionButtonGreen()],
+      children: <Widget>[
+        Stack(
+          alignment: Alignment.center,
+          children: [
+            card,
+             Text(
+              cardText,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
+        const FloatingActionButtonGreen()
+      ],
     );
   }
 }

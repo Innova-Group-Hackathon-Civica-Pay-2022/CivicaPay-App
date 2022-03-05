@@ -17,7 +17,7 @@ class _ProfileState extends State<Profile> {
   final double profileHeight = 100;
   final double top = 80;
   String name = '';
-  int points = 69;
+  int points = 0;
   int certificates = 13;
 
   @override
@@ -26,6 +26,11 @@ class _ProfileState extends State<Profile> {
     _providerRequests.getUserName().then((String result) {
       setState(() {
         name = result;
+      });
+    });
+    _providerRequests.getUserPoints().then((int result) {
+      setState(() {
+        points = result;
       });
     });
   }
@@ -51,7 +56,7 @@ class _ProfileState extends State<Profile> {
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 20,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
@@ -122,8 +127,9 @@ class _ProfileState extends State<Profile> {
               padding: const EdgeInsets.all(10.0),
               scrollDirection: Axis.vertical,
               children: <Widget>[
-                CardImage("images/social_activities.png"),
-                CardImage("images/reedem_points.png"),
+                CardImage(
+                    "images/social_activities.png", "Actividades Sociales"),
+                CardImage("images/reedem_points.png", "Redime tus Puntos"),
               ],
             ),
           ),
