@@ -1,16 +1,17 @@
-# civicapay_2022
+# Hackathon Civica Pay 2022
 
-A new Flutter project.
+This App is what we did to solve the Hackathon of 2022.
 
-## Getting Started
+## Folder structure
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+.
+├── build                   # Compiled files.
+├── images                  # Source image files.
+├── lib                     # Source files (alternatively `lib` or `app`).
+├──── components            # All the Widget components of the App.
+├──── pages                 # All the pages shown by the app.
+├──── providers             # Tools and utilities used by the app.
+├── LICENSE
+└── README.md
+```
