@@ -19,19 +19,28 @@ class _SocialActivitiesState extends State<SocialActivities> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Welcome to Flutter',
+      title: 'Social Activities',
       home: Scaffold(
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
-                "Actividades disponibles",
-                style: TextStyle(
-                  color: Colors.green,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w600,
-                ),
+              Row(
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    onPressed: () {},
+                    color: Colors.green,
+                  ),
+                  Text(
+                    "Actividades disponibles",
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

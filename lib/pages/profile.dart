@@ -138,10 +138,6 @@ class _ProfileState extends State<Profile> {
           onPressed: () => _providerRequests.getActivities(),
           child: Text("Stuff"),
         ),
-        ElevatedButton(
-          onPressed: () => _providerRequests.getActivities(),
-          child: Text("Payment"),
-        )
       ],
     );
   }
