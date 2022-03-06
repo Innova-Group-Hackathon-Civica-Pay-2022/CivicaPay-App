@@ -1,4 +1,4 @@
-import 'package:civicapay_2022/pages/social_activities.dart';
+import 'package:civicapay_2022/pages/social_activities/social_activities.dart';
 import 'package:flutter/material.dart';
 
 class FloatingActionButtonGreen extends StatefulWidget {
