@@ -95,14 +95,58 @@ class _ReedemPointsState extends State<ReedemPoints> {
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 10, bottom: 10, left: 30, right: 30),
+                child: Card(
+                  child: Container(
+                    height: 150,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.green.shade900,
+                          Colors.green.shade400,
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(top: 20, bottom: 20, left: 50),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Tus Puntos Cívica",
+                              style: whiteTektFont1.copyWith(
+                                  fontSize: 20, fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              "07/03/2022",
+                              style: whiteTektFont1.copyWith(
+                                  fontSize: 14, fontWeight: FontWeight.w400),
+                            ),
+                            Text(
+                              "13",
+                              style: whiteTektFont1.copyWith(
+                                  fontSize: 20, fontWeight: FontWeight.w600),
+                            ),
+                          ]),
+                    ), //declare your widget here
+                  ),
+                ),
+              ),
               Container(
                 margin: const EdgeInsets.only(left: 31, top: 15),
                 child: CustomTabbar(const [
                   'Todo',
-                  'Enseñanza',
-                  'Recolección',
-                  'Acompañamientos',
-                  'Miscelánea'
+                  'Educación',
+                  'Alimentos',
+                  'Transporte',
+                  'Museos'
                 ]),
               ),
               Container(
@@ -136,7 +180,7 @@ class _ReedemPointsState extends State<ReedemPoints> {
                   decoration: BoxDecoration(
                       image: const DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage('images/teaching_english.jpg')),
+                          image: AssetImage('images/todo_en_artes.jpg')),
                       borderRadius: const BorderRadius.all(Radius.circular(8)),
                       color: greyColor),
                   child: Stack(
@@ -147,12 +191,12 @@ class _ReedemPointsState extends State<ReedemPoints> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Clases de Inglés',
+                              'Descuento Todo en Artes',
                               style: whiteTektFont1.copyWith(
                                   fontSize: 14, fontWeight: FontWeight.w800),
                             ),
                             Text(
-                              'Biblioteca La Paloma',
+                              'Bono de 10% de descuento',
                               style: whiteTektFont1.copyWith(
                                   fontSize: 10, fontWeight: FontWeight.w600),
                             )
@@ -176,12 +220,12 @@ class _ReedemPointsState extends State<ReedemPoints> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
-                      'De acuerdo a tu perfíl',
+                      'Últimos items',
                       style: greenTektFont1.copyWith(
                           fontSize: 18, fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      'Realiza experiencias en base a tu perfíl',
+                      'Estos son los últimos items añadidos',
                       style: blackTektFont1.copyWith(
                           fontSize: 14, fontWeight: FontWeight.w400),
                     ),
@@ -198,7 +242,7 @@ class _ReedemPointsState extends State<ReedemPoints> {
                   color: greyColor,
                   image: const DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage('images/ludoteca_acompanar.jpg')),
+                      image: AssetImage('images/metro_medellin.jpg')),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -209,12 +253,12 @@ class _ReedemPointsState extends State<ReedemPoints> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Acompañamiento en Ludoteca',
+                          'Viajes gratis Metro',
                           style: whiteTektFont1.copyWith(
                               fontSize: 14, fontWeight: FontWeight.w600),
                         ),
                         Text(
-                          'Guardería Manitas',
+                          '24 horas de viajes\ngratis',
                           style: whiteTektFont1.copyWith(
                               fontSize: 12, fontWeight: FontWeight.w500),
                         ),
@@ -239,7 +283,7 @@ class _ReedemPointsState extends State<ReedemPoints> {
                   color: greyColor,
                   image: const DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage('images/programming_classes.jpg')),
+                      image: AssetImage('images/cine_colombia.jpg')),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -250,12 +294,12 @@ class _ReedemPointsState extends State<ReedemPoints> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Programación para principiantes',
+                          'Descuento Cine Colombia',
                           style: whiteTektFont1.copyWith(
                               fontSize: 14, fontWeight: FontWeight.w600),
                         ),
                         Text(
-                          'BiblioLabs',
+                          '35% de Descuento en compras de\nCine Colombia',
                           style: whiteTektFont1.copyWith(
                               fontSize: 12, fontWeight: FontWeight.w500),
                         ),

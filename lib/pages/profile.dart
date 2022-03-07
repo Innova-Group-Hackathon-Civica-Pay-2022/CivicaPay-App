@@ -25,9 +25,11 @@ class _ProfileState extends State<Profile> {
   @override
   void initState() {
     super.initState();
+    name = "María Parra";
     _providerRequests.getUserName().then((String result) {
       setState(() {
         name = result;
+        name = "María Parra";
       });
     });
     _providerRequests.getUserPoints().then((int result) {
@@ -70,7 +72,7 @@ class _ProfileState extends State<Profile> {
               ),
             ),
             Positioned(
-              bottom: 5,
+              bottom: 1,
               left: 20,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
