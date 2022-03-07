@@ -262,7 +262,7 @@ class DetailPage extends StatelessWidget {
                   width: 36,
                   height: 36,
                   decoration:
-                      BoxDecoration(shape: BoxShape.circle, color: blueColor),
+                      BoxDecoration(shape: BoxShape.circle, color: greenColor),
                 ),
               ],
             ),
@@ -271,7 +271,7 @@ class DetailPage extends StatelessWidget {
               height: 55,
               width: MediaQuery.of(context).size.width - 60,
               decoration: BoxDecoration(
-                  color: blueColor,
+                  color: greenColor,
                   borderRadius: BorderRadius.all(Radius.circular(15))),
               child: Center(
                   child: Text(

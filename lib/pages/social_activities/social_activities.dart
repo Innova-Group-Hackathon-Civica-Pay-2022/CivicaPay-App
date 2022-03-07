@@ -44,7 +44,7 @@ class _SocialActivitiesState extends State<SocialActivities> {
                             style: blackTektFont1.copyWith(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
-                                color: blueColor)),
+                                color: greenColor)),
                       ],
                     ),
                     Text(
@@ -68,9 +68,9 @@ class _SocialActivitiesState extends State<SocialActivities> {
                             child: Row(
                               children: [
                                 Image.asset('images/cari.png'),
-                                SizedBox(width: 9),
+                                const SizedBox(width: 9),
                                 Text(
-                                  'Search',
+                                  'Buscar',
                                   style: blackTektFont1.copyWith(
                                       fontSize: 14, color: greyColor),
                                 )
@@ -84,7 +84,7 @@ class _SocialActivitiesState extends State<SocialActivities> {
                             height: 50,
                             width: 53,
                             decoration: BoxDecoration(
-                                color: blueColor,
+                                color: greenColor,
                                 borderRadius:
                                     const BorderRadius.all(Radius.circular(8)),
                                 image: const DecorationImage(

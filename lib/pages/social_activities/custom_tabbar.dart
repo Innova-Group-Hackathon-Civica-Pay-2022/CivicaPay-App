@@ -33,7 +33,7 @@ class CustomTabbar extends StatelessWidget {
                       width: 5,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: (titles.indexOf(e) == 0) ? blueColor : bulao,
+                        color: (titles.indexOf(e) == 0) ? greenColor : bulao,
                       ),
                     )
                   ],
