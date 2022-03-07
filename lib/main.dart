@@ -91,10 +91,13 @@ class _MyHomePageState extends State<MyHomePage> {
             });
           },
         ),
-        body: Container(
-          color: Colors.green,
-          child: Center(
-            child: _showPage,
+        backgroundColor: Colors.green,
+        body: SafeArea(
+          child: Container(
+            color: Colors.green,
+            child: Center(
+              child: _showPage,
+            ),
           ),
         ));
   }
