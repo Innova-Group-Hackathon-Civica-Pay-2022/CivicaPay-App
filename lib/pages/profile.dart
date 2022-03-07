@@ -1,9 +1,10 @@
+import 'package:civicapay_2022/Models/User.dart';
 import 'package:civicapay_2022/components/card_image.dart';
-import 'package:civicapay_2022/components/text_test.dart';
 import 'package:civicapay_2022/components/user_cover.dart';
 import 'package:civicapay_2022/components/user_image.dart';
 import 'package:civicapay_2022/pages/reedem_points/reedem_points.dart';
 import 'package:civicapay_2022/pages/social_activities/social_activities.dart';
+import 'package:civicapay_2022/providers/db.dart';
 import 'package:flutter/material.dart';
 import 'package:civicapay_2022/providers/requests.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -22,19 +23,31 @@ class _ProfileState extends State<Profile> {
   int points = 0;
   int certificates = 13;
 
+  List<User> users = [];
+
+  loadUserData() async {
+    List<User> auxUser = await DB.users();
+    setState(() {
+      users = auxUser;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    _providerRequests.getUserName().then((String result) {
-      setState(() {
-        name = result;
-      });
-    });
-    _providerRequests.getUserPoints().then((int result) {
-      setState(() {
-        points = result;
-      });
-    });
+    loadUserData();
+    // name = "María Parra";
+    // _providerRequests.getUserName().then((String result) {
+    //   setState(() {
+    //     name = result;
+    //     name = "María Parra";
+    //   });
+    // });
+    // _providerRequests.getUserPoints().then((int result) {
+    //   setState(() {
+    //     points = result;
+    //   });
+    // });
   }
 
   @override
@@ -58,7 +71,8 @@ class _ProfileState extends State<Profile> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      name,
+                      users[0].name,
+                      //name,
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -70,7 +84,7 @@ class _ProfileState extends State<Profile> {
               ),
             ),
             Positioned(
-              bottom: 5,
+              bottom: 1,
               left: 20,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -84,7 +98,8 @@ class _ProfileState extends State<Profile> {
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          "${points.toString()} CiviPuntos",
+                          "${users[0].civiPoints.toString()} CiviPuntos",
+                          //"${points.toString()} CiviPuntos",
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -105,7 +120,8 @@ class _ProfileState extends State<Profile> {
                         Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Text(
-                            "${certificates.toString()} Certificados",
+                            "${users[0].certifications.toString()} Certificados",
+                            //"${certificates.toString()} Certificados",
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
