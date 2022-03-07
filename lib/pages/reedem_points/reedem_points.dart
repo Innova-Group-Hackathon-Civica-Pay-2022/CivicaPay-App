@@ -5,14 +5,14 @@ import 'package:civicapay_2022/styles/theme.dart';
 import 'package:civicapay_2022/pages/social_activities/detail_page.dart';
 import 'package:civicapay_2022/pages/social_activities/custom_tabbar.dart';
 
-class SocialActivities extends StatefulWidget {
-  const SocialActivities({Key? key}) : super(key: key);
+class ReedemPoints extends StatefulWidget {
+  const ReedemPoints({Key? key}) : super(key: key);
 
   @override
-  State<SocialActivities> createState() => _SocialActivitiesState();
+  State<ReedemPoints> createState() => _ReedemPointsState();
 }
 
-class _SocialActivitiesState extends State<SocialActivities> {
+class _ReedemPointsState extends State<ReedemPoints> {
   final ProviderRequests _providerRequests = ProviderRequests();
   final double coverHeight = 280;
   final double profileHeight = 100;
@@ -20,7 +20,7 @@ class _SocialActivitiesState extends State<SocialActivities> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Social Activities',
+        title: 'Reedem Points',
         home: Scaffold(
           backgroundColor: greyColor2,
           body: ListView(
@@ -36,14 +36,14 @@ class _SocialActivitiesState extends State<SocialActivities> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Encuentra",
+                            "Redime tus",
                             style: blackTektFont1.copyWith(
                                 fontSize: 20, fontWeight: FontWeight.w600),
                           ),
                           const SizedBox(
                             width: 8,
                           ),
-                          Text("Actividades Sociales",
+                          Text("CiviPuntos",
                               style: blackTektFont1.copyWith(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w600,
@@ -161,8 +161,9 @@ class _SocialActivitiesState extends State<SocialActivities> {
                       ),
                       Align(
                         alignment: Alignment.bottomRight,
-                        child:
-                            FloatingActionButtonGreen(pageToGo: DetailPage()),
+                        child: FloatingActionButtonGreen(
+                          pageToGo: DetailPage(),
+                        ),
                       )
                     ],
                   ),
@@ -262,7 +263,9 @@ class _SocialActivitiesState extends State<SocialActivities> {
                     ),
                     Align(
                       alignment: Alignment.bottomRight,
-                      child: FloatingActionButtonGreen(pageToGo: DetailPage()),
+                      child: FloatingActionButtonGreen(
+                        pageToGo: DetailPage(),
+                      ),
                     )
                   ],
                 ),

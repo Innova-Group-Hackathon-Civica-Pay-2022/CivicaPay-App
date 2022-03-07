@@ -6,7 +6,7 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: const EdgeInsets.only(left: 30),
+        margin: EdgeInsets.only(left: 30),
         child: ListView(
           children: [
             SafeArea(

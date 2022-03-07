@@ -2,6 +2,8 @@ import 'package:civicapay_2022/components/card_image.dart';
 import 'package:civicapay_2022/components/text_test.dart';
 import 'package:civicapay_2022/components/user_cover.dart';
 import 'package:civicapay_2022/components/user_image.dart';
+import 'package:civicapay_2022/pages/reedem_points/reedem_points.dart';
+import 'package:civicapay_2022/pages/social_activities/social_activities.dart';
 import 'package:flutter/material.dart';
 import 'package:civicapay_2022/providers/requests.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -43,24 +45,29 @@ class _ProfileState extends State<Profile> {
           alignment: Alignment.center,
           children: [
             UserCover(coverHeight),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: UserImage(profileHeight),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    name,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
+            Positioned(
+              top: 15,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: UserImage(profileHeight),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      name,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Positioned(
               bottom: 5,
@@ -77,7 +84,7 @@ class _ProfileState extends State<Profile> {
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          "${points.toString()} CivicaPuntos",
+                          "${points.toString()} CiviPuntos",
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -88,7 +95,7 @@ class _ProfileState extends State<Profile> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 30.0),
+                    padding: const EdgeInsets.only(left: 30.0),
                     child: Column(
                       children: [
                         const Icon(
@@ -128,16 +135,19 @@ class _ProfileState extends State<Profile> {
               scrollDirection: Axis.vertical,
               children: <Widget>[
                 CardImage(
-                    "images/social_activities.png", "Actividades Sociales"),
-                CardImage("images/reedem_points.png", "Redime tus Puntos"),
+                  "images/social_activities.png",
+                  "Actividades Sociales",
+                  const SocialActivities(),
+                ),
+                CardImage(
+                  "images/reedem_points.png",
+                  "Redime tus Puntos",
+                  const ReedemPoints(),
+                ),
               ],
             ),
           ),
         )),
-        ElevatedButton(
-          onPressed: () => _providerRequests.getActivities(),
-          child: Text("Stuff"),
-        ),
       ],
     );
   }
