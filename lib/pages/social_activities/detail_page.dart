@@ -13,11 +13,14 @@ class DetailPage extends StatelessWidget {
                 child: Stack(
               children: [
                 Align(
-                  alignment: Alignment.centerRight,
+                  alignment: Alignment.centerLeft,
                   child: Container(
                     height: 268,
-                    width: MediaQuery.of(context).size.width / 2,
+                    width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
+                        image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('images/teaching_english.jpg')),
                         color: bulao2,
                         borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(30),
@@ -25,7 +28,7 @@ class DetailPage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 30, right: 30),
+                  margin: const EdgeInsets.only(top: 30, right: 30, left: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -33,14 +36,20 @@ class DetailPage extends StatelessWidget {
                           onTap: () {
                             Navigator.pop(context);
                           },
-                          child: Image.asset('images/Back_Button.png')),
-                      Image.asset('images/Save_Button.png'),
+                          //child: Image.asset('images/Back_Button.png')),
+                          child: const Icon(Icons.arrow_back_ios,
+                              color: Colors.white)),
+                      //                     Image.asset('images/Save_Button.png'),
+                      const Icon(
+                        Icons.bookmark,
+                        color: Colors.white,
+                      )
                     ],
                   ),
                 ),
-                Container(
-                    margin: const EdgeInsets.only(top: 93),
-                    child: Image.asset('images/mobil4.png'))
+                // Container(
+                //     margin: const EdgeInsets.only(top: 93),
+                //     child: Image.asset('images/mobil4.png'))
               ],
             )),
             const SizedBox(
@@ -86,7 +95,7 @@ class DetailPage extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 10,
             ),
             Text('Características',
                 style: blackTektFont1.copyWith(
@@ -115,11 +124,11 @@ class DetailPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Security',
+                            'Días de trabajo',
                             style: blackTektFont1.copyWith(fontSize: 12),
                           ),
                           Text(
-                            'Smart Lock',
+                            '12',
                             style: blackTektFont1.copyWith(
                                 fontSize: 12, fontWeight: FontWeight.w600),
                           ),
@@ -136,7 +145,7 @@ class DetailPage extends StatelessWidget {
                             color: bulao2,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(8))),
-                        child: Image.asset('images/speedometer.png'),
+                        child: const Icon(Icons.speed),
                       ),
                       const SizedBox(
                         width: 12,
@@ -145,11 +154,11 @@ class DetailPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Speed',
+                            'Horas por día  ',
                             style: blackTektFont1.copyWith(fontSize: 12),
                           ),
                           Text(
-                            '194 km/h',
+                            '2 horas',
                             style: blackTektFont1.copyWith(
                                 fontSize: 12, fontWeight: FontWeight.w600),
                           ),
@@ -161,7 +170,7 @@ class DetailPage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 10, right: 30),
+              margin: const EdgeInsets.only(top: 10, right: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -172,21 +181,22 @@ class DetailPage extends StatelessWidget {
                         width: 50,
                         decoration: BoxDecoration(
                             color: bulao2,
-                            borderRadius: BorderRadius.all(Radius.circular(8))),
-                        child: Image.asset('images/engine.png'),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(8))),
+                        child: const Icon(Icons.date_range),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 12,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Engine',
+                            'Fecha',
                             style: blackTektFont1.copyWith(fontSize: 12),
                           ),
                           Text(
-                            '2,5L 4-Silinder',
+                            '19/03/2022',
                             style: blackTektFont1.copyWith(
                                 fontSize: 12, fontWeight: FontWeight.w600),
                           ),
@@ -201,21 +211,22 @@ class DetailPage extends StatelessWidget {
                         width: 50,
                         decoration: BoxDecoration(
                             color: bulao2,
-                            borderRadius: BorderRadius.all(Radius.circular(8))),
-                        child: Image.asset('images/kursi.png'),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(8))),
+                        child: const Icon(Icons.language),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 12,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Seats',
+                            'Nivel de Inglés',
                             style: blackTektFont1.copyWith(fontSize: 12),
                           ),
                           Text(
-                            '4 People',
+                            'B2 min.',
                             style: blackTektFont1.copyWith(
                                 fontSize: 12, fontWeight: FontWeight.w600),
                           ),
@@ -227,63 +238,33 @@ class DetailPage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 30, bottom: 10),
-              child: Text('Select Color',
+              margin: const EdgeInsets.only(top: 30, bottom: 10),
+              child: Text('Mas información',
                   style: blackTektFont1.copyWith(
                       fontSize: 16, fontWeight: FontWeight.w600)),
             ),
-            Row(
-              children: [
-                Container(
-                  height: 36,
-                  width: 36,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.red),
-                      shape: BoxShape.circle),
-                  child: Center(
-                    child: Container(
-                      height: 26,
-                      width: 26,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: Colors.red),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                Container(
-                  width: 36,
-                  height: 36,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.black),
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                Container(
-                  width: 36,
-                  height: 36,
-                  decoration:
-                      BoxDecoration(shape: BoxShape.circle, color: greenColor),
-                ),
-              ],
-            ),
+            Text(
+                'En la Parroquia funciona una biblioteca y una videoteca de espiritualidad. Es una cuidada selección que tiene como objetivo ayudar a la vida espiritual de las personas.',
+                style: blackTektFont1.copyWith(
+                    fontSize: 14, fontWeight: FontWeight.w400)),
             Container(
-              margin: EdgeInsets.only(top: 47, right: 30),
+              margin: const EdgeInsets.only(top: 20, right: 30),
               height: 55,
               width: MediaQuery.of(context).size.width - 60,
               decoration: BoxDecoration(
                   color: greenColor,
-                  borderRadius: BorderRadius.all(Radius.circular(15))),
+                  borderRadius: const BorderRadius.all(Radius.circular(15))),
               child: Center(
                   child: Text(
-                'Book Now',
-                style:
-                    blackTektFont1.copyWith(fontSize: 16, color: Colors.white),
+                'Aplicar',
+                style: blackTektFont1.copyWith(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               )),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             )
           ],
