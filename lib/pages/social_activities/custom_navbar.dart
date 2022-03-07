@@ -7,7 +7,7 @@ class CustomNavbar extends StatelessWidget {
     return Container(
       height: 85,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(8), topRight: Radius.circular(8))),
@@ -20,12 +20,12 @@ class CustomNavbar extends StatelessWidget {
               Container(
                 height: 19,
                 width: 20,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage('images/home.png'),
                         fit: BoxFit.cover)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 9,
               ),
               Text(
@@ -41,12 +41,12 @@ class CustomNavbar extends StatelessWidget {
               Container(
                 height: 19,
                 width: 19,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage('images/cart.png'),
                         fit: BoxFit.cover)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 9,
               ),
               Text(

@@ -19,13 +19,13 @@ class DetailPage extends StatelessWidget {
                     width: MediaQuery.of(context).size.width / 2,
                     decoration: BoxDecoration(
                         color: bulao2,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(30),
                         )),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 30, right: 30),
+                  margin: const EdgeInsets.only(top: 30, right: 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -39,44 +39,44 @@ class DetailPage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                    margin: EdgeInsets.only(top: 93),
+                    margin: const EdgeInsets.only(top: 93),
                     child: Image.asset('images/mobil4.png'))
               ],
             )),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
-              'Mazda 6 Turbocharged \nSport Sedan',
+              'Clases de Inglés \nBiblioteca La Paloma',
               style: blackTektFont1.copyWith(
                   fontSize: 18, fontWeight: FontWeight.w600),
             ),
             Container(
-              margin: EdgeInsets.only(top: 10),
-              padding: EdgeInsets.symmetric(horizontal: 13),
+              margin: const EdgeInsets.only(top: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 13),
               height: 50,
               width: MediaQuery.of(context).size.width - 60,
               decoration: BoxDecoration(
                   color: bulao,
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
+                  borderRadius: const BorderRadius.all(Radius.circular(8))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Price starts from',
+                    'Puntos dados',
                     style:
                         blackTektFont1.copyWith(fontSize: 18, color: greyColor),
                   ),
                   Container(
                     width: 100,
                     height: 30,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                     ),
                     child: Center(
                       child: Text(
-                        '78,905',
+                        '12',
                         style: blackTektFont1.copyWith(
                             fontSize: 16, fontWeight: FontWeight.w600),
                       ),
@@ -85,14 +85,14 @@ class DetailPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Text('Main Freature',
+            Text('Características',
                 style: blackTektFont1.copyWith(
                     fontSize: 16, fontWeight: FontWeight.w600)),
             Container(
-              margin: EdgeInsets.only(top: 10, right: 30),
+              margin: const EdgeInsets.only(top: 10, right: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -103,10 +103,12 @@ class DetailPage extends StatelessWidget {
                         width: 50,
                         decoration: BoxDecoration(
                             color: bulao2,
-                            borderRadius: BorderRadius.all(Radius.circular(8))),
-                        child: Image.asset('images/Lock.png'),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(8))),
+                        //child: Image.asset('images/Lock.png'),
+                        child: const Icon(Icons.sunny),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 12,
                       ),
                       Column(
@@ -132,10 +134,11 @@ class DetailPage extends StatelessWidget {
                         width: 50,
                         decoration: BoxDecoration(
                             color: bulao2,
-                            borderRadius: BorderRadius.all(Radius.circular(8))),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(8))),
                         child: Image.asset('images/speedometer.png'),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 12,
                       ),
                       Column(

@@ -1,3 +1,4 @@
+import 'package:civicapay_2022/components/floating_action_button_green.dart';
 import 'package:civicapay_2022/providers/requests.dart';
 import 'package:flutter/material.dart';
 import 'package:civicapay_2022/styles/theme.dart';
@@ -21,24 +22,25 @@ class _SocialActivitiesState extends State<SocialActivities> {
     return MaterialApp(
         title: 'Social Activities',
         home: Scaffold(
-          backgroundColor: bulao,
+          backgroundColor: greyColor2,
           body: ListView(
             children: [
               Container(
-                padding: const EdgeInsets.only(left: 31, top: 30, bottom: 58),
+                padding: const EdgeInsets.only(left: 31, top: 30, bottom: 30),
                 color: Colors.white,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Center(
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             "Encuentra",
                             style: blackTektFont1.copyWith(
                                 fontSize: 20, fontWeight: FontWeight.w600),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
                           Text("Actividades Sociales",
@@ -94,16 +96,32 @@ class _SocialActivitiesState extends State<SocialActivities> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 31),
-                child: CustomTabbar(
-                    const ['Todo', 'Enseñanza', 'Recolección', 'Acompañamientos', 'Miscelánea']),
+                margin: const EdgeInsets.only(left: 31, top: 15),
+                child: CustomTabbar(const [
+                  'Todo',
+                  'Enseñanza',
+                  'Recolección',
+                  'Acompañamientos',
+                  'Miscelánea'
+                ]),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 31, bottom: 21, top: 20),
-                child: Text(
-                  'Popular Vehicles',
-                  style: blackTektFont1.copyWith(
-                      fontSize: 16, fontWeight: FontWeight.w600),
+                margin: const EdgeInsets.only(left: 31, bottom: 18, top: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'Popular',
+                      style: greenTektFont1.copyWith(
+                          fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                    Text(
+                      'Lo más popular',
+                      style: blackTektFont1.copyWith(
+                          fontSize: 14, fontWeight: FontWeight.w400),
+                    ),
+                  ],
                 ),
               ),
               GestureDetector(
@@ -116,8 +134,11 @@ class _SocialActivitiesState extends State<SocialActivities> {
                   height: 200,
                   width: MediaQuery.of(context).size.width - 60,
                   decoration: BoxDecoration(
+                      image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('images/teaching_english.jpg')),
                       borderRadius: const BorderRadius.all(Radius.circular(8)),
-                      color: bulao2),
+                      color: greyColor),
                   child: Stack(
                     children: [
                       Container(
@@ -126,89 +147,163 @@ class _SocialActivitiesState extends State<SocialActivities> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Mazda 6 Turbocharged',
-                              style: blackTektFont1.copyWith(
-                                  fontSize: 14, fontWeight: FontWeight.w600),
+                              'Clases de Inglés',
+                              style: whiteTektFont1.copyWith(
+                                  fontSize: 14, fontWeight: FontWeight.w800),
                             ),
                             Text(
-                              '2020 Sport Ca',
-                              style: blackTektFont1.copyWith(
-                                  fontSize: 10, fontWeight: FontWeight.w400),
+                              'Biblioteca La Paloma',
+                              style: whiteTektFont1.copyWith(
+                                  fontSize: 10, fontWeight: FontWeight.w600),
                             )
                           ],
                         ),
                       ),
-                      Align(
+                      const Align(
                         alignment: Alignment.bottomRight,
-                        child: Image.asset('images/mobil1.png'),
+                        child: const FloatingActionButtonGreen(),
                       )
                     ],
                   ),
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 18, right: 42, top: 20),
-                padding: EdgeInsets.all(13),
-                height: 82,
-                width: MediaQuery.of(context).size.width - 60,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                    color: bulao2),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                margin: const EdgeInsets.only(left: 31, bottom: 5, top: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Corolla Specs',
-                          style: blackTektFont1.copyWith(
-                              fontSize: 14, fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          'Toyota',
-                          style: blackTektFont1.copyWith(
-                              fontSize: 12, fontWeight: FontWeight.w500),
-                        ),
-                      ],
+                    Text(
+                      'De acuerdo a tu perfíl',
+                      style: greenTektFont1.copyWith(
+                          fontSize: 18, fontWeight: FontWeight.w600),
                     ),
-                    Image.asset('images/mobil2.png')
+                    Text(
+                      'Realiza experiencias en base a tu perfíl',
+                      style: blackTektFont1.copyWith(
+                          fontSize: 14, fontWeight: FontWeight.w400),
+                    ),
                   ],
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 18, right: 42, top: 20),
-                padding: EdgeInsets.all(13),
-                height: 82,
+                margin: const EdgeInsets.only(left: 18, right: 42, top: 15),
+                padding: const EdgeInsets.all(13),
+                height: 200,
                 width: MediaQuery.of(context).size.width - 60,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                    color: bulao2),
+                  borderRadius: const BorderRadius.all(Radius.circular(8)),
+                  color: greyColor,
+                  image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/ludoteca_acompanar.jpg')),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    //Image.asset('images/ludoteca_acompanar.jpg'),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Kia Australia',
-                          style: blackTektFont1.copyWith(
+                          'Acompañamiento en Ludoteca',
+                          style: whiteTektFont1.copyWith(
                               fontSize: 14, fontWeight: FontWeight.w600),
                         ),
                         Text(
-                          'Cerrato',
-                          style: blackTektFont1.copyWith(
+                          'Guardería Manitas',
+                          style: whiteTektFont1.copyWith(
                               fontSize: 12, fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
-                    Image.asset('images/mobil3.png')
+                    const Align(
+                      alignment: Alignment.bottomRight,
+                      child: FloatingActionButtonGreen(),
+                    )
                   ],
                 ),
               ),
-              SizedBox(
+              Container(
+                margin: const EdgeInsets.only(left: 18, right: 42, top: 15),
+                padding: const EdgeInsets.all(13),
+                height: 200,
+                width: MediaQuery.of(context).size.width - 60,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(8)),
+                  color: greyColor,
+                  image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/programming_classes.jpg')),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    //Image.asset('images/ludoteca_acompanar.jpg'),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Programación para principiantes',
+                          style: whiteTektFont1.copyWith(
+                              fontSize: 14, fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          'BiblioLabs',
+                          style: whiteTektFont1.copyWith(
+                              fontSize: 12, fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                    const Align(
+                      alignment: Alignment.bottomRight,
+                      child: FloatingActionButtonGreen(),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 18, right: 42, top: 15),
+                padding: const EdgeInsets.all(13),
+                height: 200,
+                width: MediaQuery.of(context).size.width - 60,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(8)),
+                  color: greyColor,
+                  image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/recycling.jpg')),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    //Image.asset('images/ludoteca_acompanar.jpg'),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Reciclado Ecológico',
+                          style: whiteTektFont1.copyWith(
+                              fontSize: 14, fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          'Súper Ecolocos',
+                          style: whiteTektFont1.copyWith(
+                              fontSize: 12, fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                    const Align(
+                      alignment: Alignment.bottomRight,
+                      child: FloatingActionButtonGreen(),
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(
                 height: 100,
               )
             ],
