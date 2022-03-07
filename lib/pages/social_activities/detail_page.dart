@@ -28,7 +28,7 @@ class DetailPage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 30, right: 30, left: 15),
+                  margin: const EdgeInsets.only(top: 20, right: 30, left: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

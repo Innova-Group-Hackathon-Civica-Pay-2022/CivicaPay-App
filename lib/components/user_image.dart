@@ -1,3 +1,5 @@
+import 'package:civicapay_2022/Models/User.dart';
+import 'package:civicapay_2022/providers/db.dart';
 import 'package:flutter/material.dart';
 
 Widget UserImage(double profileHeight) {
@@ -14,9 +16,19 @@ Widget UserImage(double profileHeight) {
               offset: Offset(0.0, 7.0),
             )
           ]),
-      child: CircleAvatar(
-        radius: profileHeight / 1.5,
-        backgroundColor: Colors.grey.shade800,
-        backgroundImage: AssetImage(pathImage),
+      child: GestureDetector(
+        onTap: () {
+          DB.insert(const User(
+            id: 1075,
+            name: "Maria Parra",
+            civiPoints: 13,
+            certifications: 3,
+          ));
+        },
+        child: CircleAvatar(
+          radius: profileHeight / 1.5,
+          backgroundColor: Colors.grey.shade800,
+          backgroundImage: AssetImage(pathImage),
+        ),
       ));
 }
