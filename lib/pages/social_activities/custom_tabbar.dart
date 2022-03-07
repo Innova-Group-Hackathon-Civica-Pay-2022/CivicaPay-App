@@ -10,10 +10,11 @@ class CustomTabbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 30,
-      child: Row(
+      child: ListView(
+        scrollDirection: Axis.horizontal,
         children: titles
             .map((e) => Padding(
-                padding: const EdgeInsets.only(right: 21),
+                padding: const EdgeInsets.only(right: 20),
                 child: Column(
                   children: [
                     Text(

@@ -30,41 +30,38 @@ class _SocialActivitiesState extends State<SocialActivities> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        Text(
-                          "Find the",
-                          style: blackTektFont1.copyWith(
-                              fontSize: 20, fontWeight: FontWeight.w600),
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text("Perfect Vehicles",
+                    Center(
+                      child: Row(
+                        children: [
+                          Text(
+                            "Encuentra",
                             style: blackTektFont1.copyWith(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                color: greenColor)),
-                      ],
-                    ),
-                    Text(
-                      "For You",
-                      style: blackTektFont1.copyWith(
-                          fontSize: 20, fontWeight: FontWeight.w600),
+                                fontSize: 20, fontWeight: FontWeight.w600),
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Text("Actividades Sociales",
+                              style: blackTektFont1.copyWith(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                  color: greenColor)),
+                        ],
+                      ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 20),
+                      margin: const EdgeInsets.only(top: 20),
                       child: Row(
                         children: [
                           Container(
-                            padding:
-                                EdgeInsets.only(top: 13, left: 17, bottom: 13),
+                            padding: const EdgeInsets.only(
+                                top: 13, left: 17, bottom: 13),
                             height: 50,
                             width: MediaQuery.of(context).size.width - 119,
                             decoration: BoxDecoration(
                                 color: greyColor2,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
+                                    const BorderRadius.all(Radius.circular(8))),
                             child: Row(
                               children: [
                                 Image.asset('images/cari.png'),
@@ -99,10 +96,10 @@ class _SocialActivitiesState extends State<SocialActivities> {
               Container(
                 margin: const EdgeInsets.only(left: 31),
                 child: CustomTabbar(
-                    const ['All', 'Sedan', 'Sport', 'Coupe', 'HatcBack']),
+                    const ['Todo', 'Enseñanza', 'Recolección', 'Acompañamientos', 'Miscelánea']),
               ),
               Container(
-                margin: EdgeInsets.only(left: 31, bottom: 21, top: 20),
+                margin: const EdgeInsets.only(left: 31, bottom: 21, top: 20),
                 child: Text(
                   'Popular Vehicles',
                   style: blackTektFont1.copyWith(
@@ -115,16 +112,16 @@ class _SocialActivitiesState extends State<SocialActivities> {
                       MaterialPageRoute(builder: (context) => DetailPage()));
                 },
                 child: Container(
-                  margin: EdgeInsets.only(left: 18, right: 42),
+                  margin: const EdgeInsets.only(left: 18, right: 42),
                   height: 200,
                   width: MediaQuery.of(context).size.width - 60,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      borderRadius: const BorderRadius.all(Radius.circular(8)),
                       color: bulao2),
                   child: Stack(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 16, left: 15),
+                        margin: const EdgeInsets.only(top: 16, left: 15),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
