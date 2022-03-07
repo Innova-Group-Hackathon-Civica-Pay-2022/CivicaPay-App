@@ -1,9 +1,11 @@
+import 'package:civicapay_2022/Models/User.dart';
 import 'package:civicapay_2022/components/floating_action_button_green.dart';
+import 'package:civicapay_2022/providers/db.dart';
 import 'package:civicapay_2022/providers/requests.dart';
 import 'package:flutter/material.dart';
 import 'package:civicapay_2022/styles/theme.dart';
-import 'package:civicapay_2022/pages/social_activities/detail_page.dart';
-import 'package:civicapay_2022/pages/social_activities/custom_tabbar.dart';
+import 'package:civicapay_2022/pages/reedem_points/detail_page.dart';
+import 'package:civicapay_2022/pages/reedem_points/custom_tabbar.dart';
 
 class ReedemPoints extends StatefulWidget {
   const ReedemPoints({Key? key}) : super(key: key);
@@ -17,6 +19,22 @@ class _ReedemPointsState extends State<ReedemPoints> {
   final double coverHeight = 280;
   final double profileHeight = 100;
   final double top = 80;
+
+  List<User> users = [];
+
+  loadUserData() async {
+    List<User> auxUser = await DB.users();
+    setState(() {
+      users = auxUser;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadUserData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -125,12 +143,12 @@ class _ReedemPointsState extends State<ReedemPoints> {
                                   fontSize: 20, fontWeight: FontWeight.w600),
                             ),
                             Text(
-                              "07/03/2022",
+                              DateTime.now().toString().split(" ")[0],
                               style: whiteTektFont1.copyWith(
                                   fontSize: 14, fontWeight: FontWeight.w400),
                             ),
                             Text(
-                              "13",
+                              users[0].civiPoints.toString(),
                               style: whiteTektFont1.copyWith(
                                   fontSize: 20, fontWeight: FontWeight.w600),
                             ),

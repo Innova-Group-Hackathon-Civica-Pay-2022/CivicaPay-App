@@ -14,7 +14,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        DB.insert(const User(
+        DB.insert(User(
           id: 1075,
           name: "Maria Parra",
           civiPoints: 12,
