@@ -1,7 +1,38 @@
+import 'package:civicapay_2022/Models/User.dart';
+import 'package:civicapay_2022/providers/db.dart';
 import 'package:civicapay_2022/styles/theme.dart';
 import 'package:flutter/material.dart';
 
-class DetailPage extends StatelessWidget {
+class DetailPage extends StatefulWidget {
+  DetailPage({Key? key}) : super(key: key);
+
+  @override
+  State<DetailPage> createState() => _DetailPageState();
+}
+
+class _DetailPageState extends State<DetailPage> {
+  List<User> users = [];
+  final int points_to_give = 12;
+
+  loadUserData() async {
+    List<User> auxUser = await DB.users();
+    setState(() {
+      users = auxUser;
+    });
+  }
+
+  applyToJob() {
+    users[0].civiPoints += points_to_give;
+    users[0].certifications += 1;
+    DB.update(users[0]);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadUserData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +116,7 @@ class DetailPage extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        '12',
+                        points_to_give.toString(),
                         style: blackTektFont1.copyWith(
                             fontSize: 16, fontWeight: FontWeight.w600),
                       ),
@@ -247,22 +278,28 @@ class DetailPage extends StatelessWidget {
                 'En la Parroquia funciona una biblioteca y una videoteca de espiritualidad. Es una cuidada selección que tiene como objetivo ayudar a la vida espiritual de las personas.',
                 style: blackTektFont1.copyWith(
                     fontSize: 14, fontWeight: FontWeight.w400)),
-            Container(
-              margin: const EdgeInsets.only(top: 20, right: 30),
-              height: 55,
-              width: MediaQuery.of(context).size.width - 60,
-              decoration: BoxDecoration(
-                  color: greenColor,
-                  borderRadius: const BorderRadius.all(Radius.circular(15))),
-              child: Center(
-                  child: Text(
-                'Aplicar',
-                style: blackTektFont1.copyWith(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              )),
+            GestureDetector(
+              onTap: () {
+                applyToJob();
+                Navigator.pop(context);
+              },
+              child: Container(
+                margin: const EdgeInsets.only(top: 20, right: 30),
+                height: 55,
+                width: MediaQuery.of(context).size.width - 60,
+                decoration: BoxDecoration(
+                    color: greenColor,
+                    borderRadius: const BorderRadius.all(Radius.circular(15))),
+                child: Center(
+                    child: Text(
+                  'Aplicar',
+                  style: blackTektFont1.copyWith(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
+              ),
             ),
             const SizedBox(
               height: 50,

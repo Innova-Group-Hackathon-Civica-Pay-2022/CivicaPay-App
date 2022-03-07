@@ -18,7 +18,7 @@ Widget UserImage(double profileHeight) {
           ]),
       child: GestureDetector(
         onTap: () {
-          DB.insert(const User(
+          DB.insert(User(
             id: 1075,
             name: "Maria Parra",
             civiPoints: 13,

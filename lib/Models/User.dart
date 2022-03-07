@@ -1,10 +1,10 @@
 class User {
-  final int id;
-  final String name;
-  final int civiPoints;
-  final int certifications;
+  int id;
+  String name;
+  int civiPoints;
+  int certifications;
 
-  const User(
+  User(
       {required this.id,
       required this.name,
       required this.civiPoints,
