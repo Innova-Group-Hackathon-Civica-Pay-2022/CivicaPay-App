@@ -2,7 +2,10 @@ import 'package:civicapay_2022/pages/social_activities/social_activities.dart';
 import 'package:flutter/material.dart';
 
 class FloatingActionButtonGreen extends StatefulWidget {
-  const FloatingActionButtonGreen({Key? key}) : super(key: key);
+  Widget pageToGo;
+  FloatingActionButtonGreen(
+      {this.pageToGo = const SocialActivities(), Key? key})
+      : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -26,7 +29,7 @@ class _FloatingActionButtonGreen extends State<FloatingActionButtonGreen> {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => SocialActivities()),
+          MaterialPageRoute(builder: (context) => widget.pageToGo),
         );
       },
       child: const Icon(Icons.add),
